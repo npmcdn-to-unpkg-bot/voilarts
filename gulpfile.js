@@ -1,6 +1,13 @@
 /* jshint node: true */
 /* global $: true */
 "use strict";
+	var	lost = require("lost");
+	var	postcss = require('gulp-postcss');
+    var browserSync = require('browser-sync');
+    var reload = browserSync.reload;
+	var sourcemaps   = require('gulp-sourcemaps');
+  var autoprefixer = require('autoprefixer');
+
 
 var gulp = require( "gulp" ),
 	/** @type {Object} Loader of Gulp plugins from `package.json` */
@@ -72,7 +79,13 @@ gulp.task( "copy", function() {
 
 /** CSS Preprocessors */
 gulp.task( "sass", function () {
+	var processors = [
+		lost,
+		autoprefixer({ browsers: ['last 2 versions'] })
+
+	];
 	return gulp.src( "src/css/sass/style.scss" )
+		.pipe(postcss(processors))
 		.pipe( $.rubySass({
 			style: "expanded",
 			precision: 10
@@ -80,8 +93,29 @@ gulp.task( "sass", function () {
 		.on( "error", function( e ) {
 			console.error( e );
 		})
-		.pipe( gulp.dest( "src/css" ) );
+		.pipe( gulp.dest( "src/css" ) )
+        .pipe(reload({stream:true}));
 });
+
+/**BrowserSync*/
+
+gulp.task("browser-sync",function () {
+    //watch files
+    var files= [
+        "src/css/style.css",
+        "src/*.php"
+    ];
+    //browserSync({
+        //ghostMode:tru
+//});
+    //initialize BrowserSync
+    browserSync.init(files, {
+        proxy: "localhost/voilarts",
+        notify: false,
+        ghostMode:true
+    });
+});
+
 
 /** STYLES */
 gulp.task( "styles", [ "sass" ], function() {
@@ -135,7 +169,7 @@ gulp.task( "envProduction", function() {
 });
 
 /** Livereload */
-gulp.task( "watch", [ "template", "styles", "jshint" ], function() {
+gulp.task( "watch", [ "template", "styles" ], function() {
 	var server = $.livereload();
 
 	/** Watch for livereoad */
@@ -155,7 +189,7 @@ gulp.task( "watch", [ "template", "styles", "jshint" ], function() {
 	], [ "styles" ] );
 
 	/** Watch for JSHint */
-	gulp.watch( "src/js/{!(lib)/*.js,*.js}", ["jshint"] );
+	gulp.watch( "src/js/{!(lib)/*.js,*.js}" );
 });
 
 /** Build */
@@ -164,12 +198,14 @@ gulp.task( "build", [
 	"clean",
 	"template",
 	"styles",
-	"jshint",
+	// "jshint",
 	"copy",
 	"uglify"
 ], function () {
 	console.log("Build is finished");
 });
 
-/** Gulp default task */
-gulp.task( "default", ["watch"] );
+gulp.task( "default", ["watch", "browser-sync"], function () {
+    gulp.watch("src/css/sass/**/*.scss",["sass"]);
+} );
+

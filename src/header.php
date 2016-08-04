@@ -42,10 +42,16 @@
 					<!-- /logo -->
 
 					<!-- nav -->
-					<nav class="nav" role="navigation">
+					<nav class="nav slide-menu" role="navigation">
 						<?php html5blank_nav(); ?>
 					</nav>
 					<!-- /nav -->
-
+            <div ng-view></div>
+            <slide></slide>
+            <div ng-controlle="main">
+            <ul ng-repeat="mm in main">
+                <li>{{2+2}}</li>
+            </ul>
+            </div>
 			</header>
 			<!-- /header -->

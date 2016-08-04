@@ -102,6 +102,45 @@ function html5blank_header_scripts()
             // Modernizr
             wp_register_script('modernizr', get_template_directory_uri() . '/bower_components/modernizr/modernizr.js', array(), '2.8.3');
 
+            // Angular app scripts
+            wp_register_script('appscripts', get_template_directory_uri() . '/ang/app/scripts/app.js'
+            , array('angularjs',
+                'angularAnimate',
+                'angularCookies',
+                'angularMocks',
+                'angularResource',
+                'angularRoute',
+                'angularSanitize',
+                'angularTouch',),
+                 '1.0.0');
+
+            // Angularjs
+            wp_register_script('angularjs', get_template_directory_uri() . '/ang/bower_components/angular/angular.js', array(), '1.5.7');
+
+            // Angularjs-animate
+            wp_register_script('angularAnimate', get_template_directory_uri() . '/ang/bower_components/angular-animate/angular-animate.js', array('angularjs'), '1.5.7');
+
+            // Angularjs-cookies
+            wp_register_script('angularCookies', get_template_directory_uri() . '/ang/bower_components/angular-cookies/angular-cookies.js', array('angularjs'), '1.5.7');
+
+            // Angularjs-mocks
+            wp_register_script('angularMocks', get_template_directory_uri() . '/ang/bower_components/angular-mocks/angular-mocks.js', array('angularjs'), '1.5.7');
+
+            // Angularjs-resource
+            wp_register_script('angularResource', get_template_directory_uri() . '/ang/bower_components/angular-resource/angular-resource.js', array('angularjs'), '1.5.7');
+
+            // Angularjs-route
+            wp_register_script('angularRoute', get_template_directory_uri() . '/ang/bower_components/angular-route/angular-route.js', array('angularjs'), '1.5.7');
+
+            // Angularjs-sanitize
+            wp_register_script('angularSanitize', get_template_directory_uri() . '/ang/bower_components/angular-sanitize/angular-sanitize.js', array('angularjs'), '1.5.7');
+
+            // Angularjs-touch
+            wp_register_script('angularTouch', get_template_directory_uri() . '/ang/bower_components/angular-touch/angular-touch.js', array('angularjs'), '1.5.7');
+
+            // Angularjs-touch
+            wp_register_script('angularEs6', get_template_directory_uri() . '/voilartrest/server/public/app.js', array(), '1.0.0');
+
             // Custom scripts
             wp_register_script(
                 'html5blankscripts',
@@ -109,11 +148,22 @@ function html5blank_header_scripts()
                 array(
                     'conditionizr',
                     'modernizr',
+                    'angularEs6',
                     'jquery'),
                 '1.0.0');
 
             // Enqueue Scripts
             wp_enqueue_script('html5blankscripts');
+            //wp_enqueue_script('appscripts');
+
+
+            wp_localize_script(
+		'html5blank_header_scripts',
+		'myLocalized',
+		array(
+			'partials' => trailingslashit( get_template_directory_uri() ) . '/ang/app/views/'
+			)
+	);
 
         // If production
         } else {
