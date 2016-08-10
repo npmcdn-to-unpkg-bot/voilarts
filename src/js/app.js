@@ -14,7 +14,7 @@ var postList = Vue.extend({
 
         posts.then(function(posts){
             this.$set('posts', posts);
-            console.log(posts);
+            console.log(posts.data[0].id);
         })
     }
 })
