@@ -1,7 +1,0 @@
-{
-    "buildDir": "dist",
-
-    "autoprefixer": [
-        "last 2 versions"
-    ]
-}
