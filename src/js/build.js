@@ -1,5 +1,11 @@
-import Vue from 'vue'
-//
+'use strict';
+
+var _vue = require('vue');
+
+var _vue2 = _interopRequireDefault(_vue);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
 //import App from './components/App.vue'
 //import Home from './components/Home.vue'
 //import Users from './components/Users.vue'
@@ -8,7 +14,7 @@ import Vue from 'vue'
 //Vue.use(VueResource)
 //Vue.use(VueRouter)
 
-var router = new VueRouter()
+var router = new VueRouter();
 
 // Pointing routes to the components they should use
 router.map({
@@ -17,12 +23,12 @@ router.map({
   },
   'users': {
     component: Users
-  },
-})
+  }
+});
 
 // Any invalid route will redirect to home
 router.redirect({
   '*': '/home'
-})
+});
 
-router.start(App, '#app')
+router.start(App, '#app');
