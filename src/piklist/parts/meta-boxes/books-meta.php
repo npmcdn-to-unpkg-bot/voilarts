@@ -42,6 +42,18 @@ Flow: Demo Workflow
     )
   ));
 
+piklist('field', array(
+    'type' => 'text'
+    ,'field' => 'demo_text'
+    ,'label' => 'Text Box'
+    ,'description' => 'Field Description'
+    ,'value' => 'Default text'
+    ,'help' => 'This is help text.'
+    ,'attributes' => array(
+      'class' => 'text'
+    )
+  ));
+
   piklist('shared/code-locater', array(
     'location' => __FILE__
     ,'type' => 'Meta Box'
