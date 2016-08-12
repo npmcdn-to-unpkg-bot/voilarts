@@ -611,3 +611,81 @@ function html5_shortcode_demo_2($atts, $content = null) // Demo Heading H2 short
 
   	register_post_type( 'book', $args );
 }
+
+  add_filter('piklist_admin_pages', 'piklist_book_admin_pages');
+  function piklist_book_admin_pages($pages)
+  {
+    $pages[] = array(
+      'page_title' => __('Demo Settings')
+      ,'menu_title' => __('Demo Settings', 'your-plugin-textdomain')
+      ,'sub_menu' => 'edit.php?post_type=piklist_demo'
+      ,'capability' => 'manage_options'
+      ,'menu_slug' => 'piklist_demo_fields'
+      ,'setting' => 'piklist_demo_fields'
+      ,'menu_icon' => piklist('url', 'piklist') . '/parts/img/piklist-icon.png'
+      ,'page_icon' => piklist('url', 'piklist') . '/parts/img/piklist-page-icon-32.png'
+      ,'default_tab' => 'Basic'
+      // ,'layout' => 'meta-boxes' // NOTE: Uncomment this to use the meta box layout on this settings page!
+      ,'save_text' => 'Save Demo Settings'
+    );
+
+    $pages[] = array(
+      'page_title' => __('Reading Settings')
+      ,'menu_title' => __('Demo Reading', 'piklist-demo')
+      ,'sub_menu' => 'edit.php?post_type=piklist_demo'
+      ,'capability' => 'manage_options'
+      ,'menu_slug' => 'piklist_demo_options'
+      ,'menu_icon' => piklist('url', 'piklist') . '/parts/img/piklist-icon.png'
+      ,'page_icon' => piklist('url', 'piklist') . '/parts/img/piklist-page-icon-32.png'
+    );
+
+    return $pages;
+  }
+
+add_filter('piklist_post_types', 'books');
+ function books($post_types)
+ {
+  $post_types['Book'] = array(
+    'labels' => piklist('post_type_labels', 'Book')
+    ,'title' => __('Nuevo presupuesto')
+    ,'public' => true
+    ,'rewrite' => array(
+      'slug' => 'book'
+    )
+    ,'supports' => array(
+      'author'
+      ,'revisions'
+      ,'editor'
+      ,'page-attributes'
+    )
+    ,'hide_meta_box' => array(
+      'slug'
+      ,'author'
+      ,'revisions'
+      ,'comments'
+      ,'commentstatus'
+    )
+  );
+return $post_types;
+}
+
+add_filter('piklist_admin_pages', 'book_ex');
+  function book_ex($pages)
+  {
+     $pages[] = array(
+      'page_title' => __('')
+      ,'menu_title' => __('Slider', 'book')
+      ,'sub_menu' => 'edit.php?post_type=book'
+      ,'capability' => 'manage_options'
+      ,'menu_slug' => 'custom_settings'
+      ,'setting' => 'my_theme_settings'
+      ,'menu_icon' => plugins_url('piklist/parts/img/piklist-icon.png')
+      ,'page_icon' => plugins_url('piklist/parts/img/piklist-page-icon-32.png')
+      ,'single_line' => true
+      ,'default_tab' => 'Basic'
+      ,'save_text' => 'Save Demo Settings'
+    );
+
+    return $pages;
+  }
+
