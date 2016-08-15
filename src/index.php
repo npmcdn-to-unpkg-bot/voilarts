@@ -14,10 +14,8 @@
         <div class="post-list">
             <article v-for="post in posts" class="post">
                 <div class="post-content">
-                    <h2>{{ post.title.rendered }}</h2>
-                    <pre>
-                    {{$data.posts | json}}
-                    </pre>
+                    <h2>titulo: {{ post.title.rendered }}</h2>
+                    <h2>{{ post.id }}</h2>
                 </div>
             </article>
         </div>

@@ -10,11 +10,11 @@ var postList = Vue.extend({
     },
 
     ready: function(){
-        posts = this.$http.get('http://localhost/voilarts/wp-json/wp/v2/posts');
+        posts = this.$http.get('http://localhost/voilarts/wp-json/wp/v2/artists-api');
 
         posts.then(function(posts){
-            this.$set('posts', posts);
-            console.log(posts.data[0].id);
+            this.$set('posts', posts.data);
+            console.log(posts);
         })
     }
 })

@@ -80,7 +80,7 @@ function html5blank_nav()
         'after'           => '',
         'link_before'     => '',
         'link_after'      => '',
-        'items_wrap'      => '<ul>%3$s</ul>',
+        'items_wrap'      => '<ul class="cd-navigation">%3$s</ul>',
         'depth'           => 0,
         'walker'          => ''
         )
@@ -465,7 +465,7 @@ add_action('wp_print_scripts', 'html5blank_conditional_scripts'); // Add Conditi
 add_action('get_header', 'enable_threaded_comments'); // Enable Threaded Comments
 add_action('wp_enqueue_scripts', 'html5blank_styles'); // Add Theme Stylesheet
 add_action('init', 'register_html5_menu'); // Add HTML5 Blank Menu
-add_action('init', 'create_post_type_html5'); // Add our HTML5 Blank Custom Post Type
+//add_action('init', 'create_post_type_html5'); // Add our HTML5 Blank Custom Post Type
 add_action('widgets_init', 'my_remove_recent_comments_style'); // Remove inline Recent Comment Styles from wp_head()
 add_action('init', 'html5wp_pagination'); // Add our HTML5 Pagination
 
@@ -669,7 +669,7 @@ add_filter('piklist_post_types', 'books');
 return $post_types;
 }
 
-add_filter('piklist_admin_pages', 'book_ex');
+//add_filter('piklist_admin_pages', 'book_ex');
   function book_ex($pages)
   {
      $pages[] = array(
@@ -678,7 +678,7 @@ add_filter('piklist_admin_pages', 'book_ex');
       ,'sub_menu' => 'edit.php?post_type=book'
       ,'capability' => 'manage_options'
       ,'menu_slug' => 'custom_settings'
-      ,'setting' => 'my_theme_settings'
+      ,'setting' => 'voilarts_settings'
       ,'menu_icon' => plugins_url('piklist/parts/img/piklist-icon.png')
       ,'page_icon' => plugins_url('piklist/parts/img/piklist-page-icon-32.png')
       ,'single_line' => true
