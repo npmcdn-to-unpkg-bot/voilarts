@@ -177,6 +177,10 @@ input[type="search"] {
  * partials/header
  * ---
  */
+.header {
+  height: 100%;
+}
+
 /**
  * partials/nav
  * ---
@@ -847,6 +851,29 @@ header.is-fixed {
 }
 body {
   background-color: lime;
+}
+
+.wrapper {
+  width: calc(99.99% * 4/12 - (30px - 30px * 4/12));
+}
+
+.wrapper:nth-child(1n) {
+  float: left;
+  margin-right: 30px;
+  clear: none;
+}
+
+.wrapper:last-child {
+  margin-right: 0;
+}
+
+.wrapper:nth-child(12n) {
+  margin-right: 0;
+  float: right;
+}
+
+.wrapper:nth-child(12n + 1) {
+  clear: left;
 }
 
 /*# sourceMappingURL=style.css.map */
