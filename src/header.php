@@ -42,9 +42,10 @@
 					<!-- /logo -->
 
 					<!-- nav -->
-					<nav class="nav slide-menu" role="navigation">
+					<nav class="nav slide-menu" id="cd-lateral-nav" role="navigation">
 						<?php html5blank_nav(); ?>
 					</nav>
+		            <a id="cd-menu-trigger" href="#0"><span class="cd-menu-text">Menu</span><span class="cd-menu-icon"></span></a>
 					<!-- /nav -->
             <div ng-view></div>
             <slide></slide>
