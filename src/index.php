@@ -23,6 +23,10 @@
 
 </template>
 
+<template id="slider-vl">
+    {{mensaje}}
+ppp
+</template>
 	<main role="main">
 		<!-- section -->
 		<section>

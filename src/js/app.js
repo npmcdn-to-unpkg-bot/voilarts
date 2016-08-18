@@ -20,12 +20,23 @@ var postList = Vue.extend({
 })
 
 
+var Slider = Vue.extend({
+    template:'slider-vl',
+    data: function(){
+        return {
+            mensaje: 'Hola  won la!'
+        }
+    }
+})
 
 var router = new VueRouter();
 
 router.map({
     '/':{
         component: postList
+    },
+    '/slider' : {
+        component: Slider
     }
 });
 
