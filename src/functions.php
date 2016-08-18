@@ -669,7 +669,7 @@ add_filter('piklist_post_types', 'books');
 return $post_types;
 }
 
-//add_filter('piklist_admin_pages', 'book_ex');
+add_filter('piklist_admin_pages', 'book_ex');
   function book_ex($pages)
   {
      $pages[] = array(

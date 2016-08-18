@@ -3,6 +3,7 @@
 "use strict";
 	var	lost = require("lost");
 	var	postcss = require('gulp-postcss');
+    var sass = require('gulp-sass');
     var browserSync = require('browser-sync');
     var reload = browserSync.reload;
 	var sourcemaps   = require('gulp-sourcemaps');
@@ -85,14 +86,8 @@ gulp.task( "sass", function () {
 
 	];
 	return gulp.src( "src/css/sass/style.scss" )
+    .pipe(sass().on('error', sass.logError))
 		.pipe(postcss(processors))
-		.pipe( $.rubySass({
-			style: "expanded",
-			precision: 10
-		}))
-		.on( "error", function( e ) {
-			console.error( e );
-		})
 		.pipe( gulp.dest( "src/css" ) )
         .pipe(reload({stream:true}));
 });
@@ -110,7 +105,7 @@ gulp.task("browser-sync",function () {
 //});
     //initialize BrowserSync
     browserSync.init(files, {
-        proxy: "localhost/voilarts",
+        proxy: "localhost/wordpress/voilarts",
         notify: false,
         ghostMode:true
     });
