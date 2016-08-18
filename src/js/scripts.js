@@ -4,7 +4,7 @@
 	$(function () {
 		// DOM ready, take it away
 	var $lateral_menu_trigger = $('#cd-menu-trigger'),
-		$content_wrapper = $('.cd-main-content'),
+		$content_wrapper = $('main'),
 		$navigation = $('header');
 
 	//open-close lateral menu clicking on the menu icon
@@ -43,10 +43,12 @@
 	});
 
 	//open (or close) submenu items in the lateral menu. Close all the other open submenu items.
-	$('.item-has-children').children('a').on('click', function(event){
+	$('.menu-item-has-children').children('a').on('click', function(event){
 		event.preventDefault();
-		$(this).toggleClass('submenu-open').next('.sub-menu').slideToggle(200).end().parent('.item-has-children').siblings('.item-has-children').children('a').removeClass('submenu-open').next('.sub-menu').slideUp(200);
+		$(this).toggleClass('submenu-open').next('.sub-menu').slideToggle(200).end().parent('.menu-item-has-children').siblings('.menu-item-has-children').children('a').removeClass('submenu-open').next('.sub-menu').slideUp(200);
 	});
 	});
+
+    console.log(php_vars);
 
 } ( this, jQuery ));

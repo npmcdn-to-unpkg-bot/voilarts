@@ -689,3 +689,24 @@ add_filter('piklist_admin_pages', 'book_ex');
     return $pages;
   }
 
+
+// plugin file or functions.php
+
+/**
+ * Enqueue scripts
+ *
+ * @author  Hector Ovalle <hxtr227@gmail.com>
+ */
+function js_enqueue_scripts() {
+// Me traigo las fotos con $settings_options['slides'][0]['image'], eso
+    // devuelve el id del media object para luego obtener la url con
+    // wp_get_attachment_url(79).
+$slider_options = get_option('voilarts_settings');
+
+    $vars = $slider_options['text'];
+
+    wp_register_script( "scripts", get_template_directory_uri() . "/js/scripts.js" );
+    wp_enqueue_script( "scripts" );
+    wp_localize_script( "scripts", "php_vars", $vars );
+}
+add_action( "wp_enqueue_scripts", "js_enqueue_scripts" );
