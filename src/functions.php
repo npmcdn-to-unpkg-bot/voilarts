@@ -710,3 +710,33 @@ $slider_options = get_option('voilarts_settings');
     wp_localize_script( "scripts", "php_vars", $vars );
 }
 add_action( "wp_enqueue_scripts", "js_enqueue_scripts" );
+
+add_action( 'rest_api_init', 'slug_register_starship' );
+function slug_register_starship() {
+    register_rest_field( 'artist',
+        'imagent',
+        array(
+            'get_callback'    => 'slug_get_starship',
+            'update_callback' => null,
+            'schema'          => null,
+        )
+    );
+}
+
+/**
+ * Get the value of the "starship" field
+ *
+ * @param array $object Details of current post.
+ * @param string $field_name Name of field.
+ * @param WP_REST_Request $request Current request
+ *
+ * @return mixed
+ */
+function slug_get_starship() {
+    $imagen = get_the_post_thumbnail_url(get_the_ID());
+    return $imagen;
+}
+    //return get_post_meta( get_the_ID(), 'demo_text', true );}
+    //return get_post_meta( get_the_ID(), 'demo_text', true );}
+
+

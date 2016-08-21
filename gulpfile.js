@@ -98,15 +98,17 @@ gulp.task("browser-sync",function () {
     //watch files
     var files= [
         "src/css/style.css",
-        "src/*.php"
+        "src/*.php",
+        "src/js/*.js"
     ];
     //browserSync({
-        //ghostMode:tru
-//});
+        //browser:  "ffx"
+    //});
     //initialize BrowserSync
     browserSync.init(files, {
         proxy: "localhost/wordpress/voilarts",
         notify: false,
+        browser:  "ffx",
         ghostMode:true
     });
 });

@@ -16,7 +16,9 @@
 @import "partials/wrapper";
 @import "partials/header";
 @import "partials/nav";
-@import "partials/menu";
+/*@import "partials/menu";*/
+@import "partials/menur";
+@import "partials/menur-trigger";
 @import "partials/sidebar";
 @import "partials/footer";
 @import "partials/print";
@@ -26,3 +28,14 @@ body {
      background-color:pink;
 }
 
+.lide-img {
+    width: 100vw;
+    padding:0px;
+    
+}
+.bxslider {
+    padding:0px; 
+    margin:0px; 
+
+
+}

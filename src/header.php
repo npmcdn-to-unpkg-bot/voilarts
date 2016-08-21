@@ -12,6 +12,7 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta name="description" content="<?php bloginfo('description'); ?>">
+ <link href="https://fonts.googleapis.com/css?family=Secular+One" rel="stylesheet">
 
 		<?php wp_head(); ?>
 		<script>
@@ -27,25 +28,29 @@
 	<body <?php body_class(); ?>>
 
 		<!-- wrapper -->
-		<div class="wrapper">
+		<div class="wrapper lide">
 
+					<!-- nav -->
+					<nav class="nav menur" role="navigation">
+                    <h3>Menú</h3>
+						<?php html5blank_nav(); ?>
+					</nav>
 			<!-- header -->
 			<header class="header clear" role="banner">
-
+                <div class="fleche">
+                  <button class="trigger" id="trigger">
+                    Menu <span></span>
+                  </button>
+                </div>
 					<!-- logo -->
 					<div class="logo">
 						<a href="<?php echo home_url(); ?>">
 							<!-- svg logo - toddmotto.com/mastering-svg-use-for-a-retina-web-fallbacks-with-png-script -->
-							<img src="<?php echo get_template_directory_uri(); ?>/img/logo.svg" alt="Logo" class="logo-img">
+							<img src="<?php echo get_template_directory_uri(); ?>/img/logo-web.svg" alt="Logo" class="logo-img">
 						</a>
 					</div>
 					<!-- /logo -->
 
-					<!-- nav -->
-					<nav class="nav slide-menu" id="cd-lateral-nav" role="navigation">
-						<?php html5blank_nav(); ?>
-					</nav>
-		            <a id="cd-menu-trigger" href="#0"><span class="cd-menu-text">Menu</span><span class="cd-menu-icon"></span></a>
 					<!-- /nav -->
             <div ng-view></div>
             <slide></slide>
