@@ -113,9 +113,10 @@ gulp.task("browser-sync",function () {
     //});
     //initialize BrowserSync
     browserSync.init(files, {
-        proxy: "localhost/wordpress/voilarts",
+        //proxy: "localhost/wordpress/voilarts",
+        proxy: "localhost/voilarts",
         notify: false,
-        browser:  "ffx",
+        //browser:  "ffx",
         ghostMode:true
     });
 });

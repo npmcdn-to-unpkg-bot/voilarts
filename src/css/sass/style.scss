@@ -43,3 +43,36 @@ body {
 .hide {
      display:none;
 }
+
+.social-vl {
+     display:flex;
+     align-items:center;
+     justify-content:center;
+     margin: auto 0;
+     width:100%;
+     i {
+         margin:8px;
+         color:#fff;
+         padding:5px;
+         &:hover {
+             cursor:pointer;
+             color:tomato;
+         }
+     }
+}
+
+    .sub-menu {
+       //transform:translateY(-123px);
+       overflow: hidden;
+       height: 0px;
+      transition: all 0.3s cubic-bezier(0.52, 0.55, 0.55, 1);
+
+    }
+
+.menu-item-has-children:hover {
+    .sub-menu {
+       height: 130px;
+      transition: all 0.3s cubic-bezier(0.52, 0.55, 0.55, 1);
+       //transform:translateY(123px);
+    }
+}

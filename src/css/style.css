@@ -374,6 +374,10 @@ nav.menur {
 #trigger span:before {
   background: #D82828; }
 
+.social-vl {
+  position: absolute;
+  bottom: 0px; }
+
 .trigger {
   position: relative;
   background: #FFF;
@@ -551,3 +555,29 @@ body {
 
 .hide {
   display: none; }
+
+.social-vl {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-pack: center;
+      justify-content: center;
+  margin: auto 0;
+  width: 100%; }
+  .social-vl i {
+    margin: 8px;
+    color: #fff;
+    padding: 5px; }
+    .social-vl i:hover {
+      cursor: pointer;
+      color: tomato; }
+
+.sub-menu {
+  overflow: hidden;
+  height: 0px;
+  transition: all 0.3s cubic-bezier(0.52, 0.55, 0.55, 1); }
+
+.menu-item-has-children:hover .sub-menu {
+  height: 130px;
+  transition: all 0.3s cubic-bezier(0.52, 0.55, 0.55, 1); }
