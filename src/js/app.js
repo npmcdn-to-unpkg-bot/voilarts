@@ -15,6 +15,9 @@ var postList = Vue.extend({
         posts.then(function(posts){
             this.$set('posts', posts.data);
             console.log(posts);
+            $(document).ready(function(){
+  $('.bxslider').bxSlider();
+});
         })
     }
 })

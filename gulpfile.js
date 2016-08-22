@@ -22,7 +22,13 @@ var gulp = require( "gulp" ),
 		/** jQuery */
 		"src/bower_components/jquery/dist/jquery.js",
 		/** Page scripts */
-		"src/js/scripts.js"
+		"src/js/scripts.js",
+		/** app scripts */
+        "src/bower_components/bxslider/source/jquery.bxSlider.js",
+		/** Vue */
+        "src/bower_components/vue/dist/vue.min.js",
+		/**  scripts */
+		"src/js/app.js"
 	],
 	/** @type {Object of Array} CSS source files to concatenate and minify */
 	cssminSrc = {
@@ -69,6 +75,7 @@ gulp.task( "copy", function() {
 	return gulp.src([
 			"src/*.{php,png,css}",
 			"src/modules/*.php",
+			"src/piklist/**/*.php",
 			"src/img/**/*.{jpg,png,svg,gif,webp,ico}",
 			"src/fonts/*.{woff,woff2,ttf,otf,eot,svg}",
 			"src/languages/*.{po,mo,pot}"

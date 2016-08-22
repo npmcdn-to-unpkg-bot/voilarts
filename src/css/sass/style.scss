@@ -19,13 +19,15 @@
 /*@import "partials/menu";*/
 @import "partials/menur";
 @import "partials/menur-trigger";
+@import "partials/preload";
 @import "partials/sidebar";
 @import "partials/footer";
 @import "partials/print";
 
 
 body {
-     background-color:pink;
+    background-color:red;
+    transition: all 0.3s cubic-bezier(0.52, 0.55, 0.55, 1);
 }
 
 .lide-img {
@@ -36,6 +38,8 @@ body {
 .bxslider {
     padding:0px; 
     margin:0px; 
+}
 
-
+.hide {
+     display:none;
 }

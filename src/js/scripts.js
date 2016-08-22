@@ -1,6 +1,9 @@
 (function( root, $, undefined ) {
 	"use strict";
 
+function menuV() {
+Tweenmax.staggerFrom('.cd-navigation',2,{scale:0},1);
+}
     $(document).ready(function(){
         $('.bxslider').bxSlider({
             auto: true,
@@ -12,8 +15,6 @@
 	$(function () {
 		// DOM ready, take it away
         $(".trigger").click(function(event) {
-    event.preventDefault();
-    console.log(event.type);
     $(".wrapper").toggleClass("is-open");
 function toggleClass(elem, clase) {
   if (hasClass(elem, clase)) {
