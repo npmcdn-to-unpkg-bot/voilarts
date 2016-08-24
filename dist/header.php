@@ -49,9 +49,15 @@
 						</a>
 					</div>
 					<!-- /logo -->
-                    <h3>Menú</h3>
-						<?php html5blank_nav(); ?>
-                        <i class="fa fa-camera-retro fa-2x"></i>
+                        <h3>Menú</h3>
+                        <?php html5blank_nav(); ?>
+                        <hr>
+                        <div class="social-vl">
+                        <i class="fa fa-facebook fa-2x"></i>
+                        <i class="fa fa-instagram fa-2x" aria-hidden="true"></i>
+                        <i class="fa fa-envelope-o fa-2x" aria-hidden="true"></i>
+                        <i class="fa fa-phone fa-2x" aria-hidden="true"></i>
+                        </div>
 					</nav>
 			<!-- header -->
 			<header class="header clear" role="banner">

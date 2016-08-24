@@ -581,3 +581,11 @@ body {
 .menu-item-has-children:hover .sub-menu {
   height: 130px;
   transition: all 0.3s cubic-bezier(0.52, 0.55, 0.55, 1); }
+
+.bx-wrapper .bx-viewport {
+  border: 0px;
+  box-shadow: 0px;
+  background: transparent; }
+
+.bxslide {
+  width: 100%; }

@@ -1,5 +1,6 @@
 <?php get_header(); ?>
-
+<?php echo do_shortcode('
+[gallery ids="73,71,69,68"]'); ?>
     <div class="white-wrap">
         <div id="app">
 

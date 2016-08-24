@@ -27,6 +27,8 @@ var gulp = require( "gulp" ),
         "src/bower_components/bxslider/source/jquery.bxSlider.js",
 		/** Vue */
         "src/bower_components/vue/dist/vue.min.js",
+		/** Vue router */
+        "src/bower_components/vue-router/dist/vue-router.min.js",
 		/**  scripts */
 		"src/js/app.js"
 	],
@@ -113,10 +115,10 @@ gulp.task("browser-sync",function () {
     //});
     //initialize BrowserSync
     browserSync.init(files, {
-        //proxy: "localhost/wordpress/voilarts",
-        proxy: "localhost/voilarts",
+        proxy: "localhost/wordpress/voilarts",
+        //proxy: "localhost/voilarts",
         notify: false,
-        //browser:  "ffx",
+        browser:  "ffx",
         ghostMode:true
     });
 });

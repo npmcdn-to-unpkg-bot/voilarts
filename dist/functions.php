@@ -102,7 +102,7 @@ function html5blank_footer_scripts()
             wp_register_script('vue-route', get_template_directory_uri() . '/src/bower_components/vue-router/dist/vue-router.js', array(), '0.7.13');
 
             // Bxs
-            wp_register_script('bxs', get_template_directory_uri() . '/src/js/bxs.js', array(), '1.0.0');
+            wp_register_script('bxs', get_template_directory_uri() . '/js/bxs.js', array(), '1.0.0');
 
             // Custom scripts
             wp_register_script(
