@@ -17,7 +17,7 @@
 		<?php wp_footer(); ?>
             <script>
       window.loading_screen = window.pleaseWait({
-        logo: "assets/images/logo.png",
+        logo: "../img/logo.png",
         backgroundColor: '#f46d3b',
         loadingHtml: "<div class='preload-juggle'><div class='ball'></div><div class='ball'></div><div class='ball'></div></div>"
       });
