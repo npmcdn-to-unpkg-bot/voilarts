@@ -31,11 +31,6 @@
 	</head>
 	<body <?php body_class(); ?>>
 
-                <div class='preload-juggle'>
-  <div class='ball'></div>
-  <div class='ball'></div>
-  <div class='ball'></div>
-</div>
 		<!-- wrapper -->
 		<div class="wrapper lide">
 
