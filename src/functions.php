@@ -101,6 +101,9 @@ function html5blank_footer_scripts()
             // VueJs router
             wp_register_script('vue-route', get_template_directory_uri() . '/src/bower_components/vue-router/dist/vue-router.js', array(), '0.7.13');
 
+            // please-wait
+            wp_register_script('pleasew', get_template_directory_uri() . '/bower_components/please-wait/build/please-wait.js', array(), '0.0.5');
+
             // Bxs
             wp_register_script('bxs', get_template_directory_uri() . '/js/bxs.js', array(), '1.0.0');
 
@@ -111,6 +114,7 @@ function html5blank_footer_scripts()
                 array(
                     'vuejs',
                     'vue-resource',
+                    'pleasew',
                     'bxs',
                     'vue-route'),
                 '1.0.0',
