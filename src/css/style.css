@@ -448,7 +448,8 @@ nav.menur {
   width: 21px;
   height: 21px;
   border-radius: 10.5px;
-  background: red;
+  background: #fff;
+  box-shadow: 1px 1px 5px 2px #cdcdcd;
   margin-top: 150px;
   margin-left: 150px;
   animation: juggle 2.1s linear infinite; }
@@ -464,12 +465,14 @@ nav.menur {
     transform: translateX(0px) translateY(0px); }
   12.5% {
     transform: translateX(27.5px) translateY(-57px) scale(1.1);
-    background: red; }
+    background: #fff; }
   25% {
     transform: translateX(55px) translateY(0px);
-    animation-timing-function: ease-out; }
+    animation-timing-function: ease-out;
+    background: #fff; }
   37.5% {
-    transform: translateX(27.5px) translateY(57px); }
+    transform: translateX(27.5px) translateY(57px);
+    background: #fff; }
   50% {
     transform: translateX(0px) translateY(0px); }
   62.5% {
@@ -581,3 +584,20 @@ body {
 .menu-item-has-children:hover .sub-menu {
   height: 130px;
   transition: all 0.3s cubic-bezier(0.52, 0.55, 0.55, 1); }
+
+body > .wrapper {
+  display: none; }
+
+body.pg-loaded > .wrapper {
+  display: block; }
+
+.pg-loading-logo-header {
+  height: 100vh; }
+
+.pg-loading-logo {
+  width: 230px;
+  position: absolute;
+  top: 50%;
+  right: 66%;
+  left: 33%;
+  bottom: 50%; }

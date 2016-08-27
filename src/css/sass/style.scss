@@ -76,3 +76,24 @@ body {
        //transform:translateY(123px);
     }
 }
+
+body > .wrapper {
+  display: none;
+}
+
+body.pg-loaded > .wrapper {
+  display: block;
+}
+
+.pg-loading-logo-header {
+     height:100vh;
+}
+
+.pg-loading-logo {
+    width: 230px;
+    position:absolute;
+    top:50%;
+    right:66%;
+    left:33%;
+    bottom:50%;
+}

@@ -17,10 +17,12 @@
 		<?php wp_footer(); ?>
             <script>
       window.loading_screen = window.pleaseWait({
-        logo: "../img/logo.png",
-        backgroundColor: '#f46d3b',
+        logo: "<?php echo get_template_directory_uri(); ?>/img/logo-web.svg",
+        backgroundColor: '#bcbdbc',
         loadingHtml: "<div class='preload-juggle'><div class='ball'></div><div class='ball'></div><div class='ball'></div></div>"
+        finish();
       });
+
     </script>
 		<!-- analytics -->
 		<script>

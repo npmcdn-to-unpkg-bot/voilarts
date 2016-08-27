@@ -4,6 +4,11 @@
 function menuV() {
 Tweenmax.staggerFrom('.cd-navigation',2,{scale:0},1);
 }
+$(".wrapper").ready(function(){
+    window.pleaseWait({
+        return finish();
+    });
+});
     $(document).ready(function(){
         $('.bxslider').bxSlider({
             auto: true,
